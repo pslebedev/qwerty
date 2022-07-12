@@ -10,8 +10,7 @@ describe('Validates and verifies an email address ', () => {
     test.each`
     email                       | expected
       ${''}                        | ${empty}
-      ${'qwerty@'}                     | ${notValid}
-      ${'#'}                       | ${notSupplied}
+      ${'qwerty@'}                     | ${notValid}     
     `('$email = $expected', async ({email, expected}) => {
       const response = await api().Email().get(token, email);
       let data = await response.json();
