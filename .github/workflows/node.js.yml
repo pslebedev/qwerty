@@ -24,6 +24,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install
+    - run: npm install jest-allure
     - run: npm test
     
     - name: Get Allure history
